@@ -3,6 +3,9 @@ require("dotenv").config();
 
 const express = require("express");
 const app = express();
+// Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js.
+// It manages relationships between data, provides schema validation,
+// and is used to translate between objects in code and the representation of those objects in MongoDB.
 const mongoose = require("mongoose");
 
 // Connects to MongoDB using string to db connection - domain / URL etc via .env file
