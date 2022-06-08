@@ -22,5 +22,5 @@ const bookedRoutes = require("./routes/bookedRoutes");
 // tells express to use the availableRoutes
 app.use("/bookedRoutes", bookedRoutes);
 
-// listens to port 3000 and logs to console
+// listens to port 27017 and logs to console
 app.listen(27017, () => console.log("Server started on port 27017"));
