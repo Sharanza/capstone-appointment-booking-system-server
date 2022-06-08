@@ -3,35 +3,27 @@ const mongoose = require("mongoose");
 const bookedSchema = new mongoose.Schema({
   day: {
     type: String,
-    required: true,
   },
   month: {
     type: String,
-    required: true,
   },
   time: {
     type: String,
-    required: true,
   },
   firstName: {
     type: String,
-    required: true,
   },
   lastName: {
     type: String,
-    required: true,
   },
   phoneNumber: {
     type: String,
-    required: true,
   },
   email: {
     type: String,
-    required: true,
   },
   comments: {
     type: String,
-    required: true,
   },
 });
 
