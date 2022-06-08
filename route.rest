@@ -1,0 +1,17 @@
+GET http://localhost:27017/bookedRoutes
+
+###
+
+POST http://localhost:27017/bookedRoutes
+Content-Type: application/json
+
+{
+    "day": "7",
+    "month": "August",
+    "time": "12:00",
+    "firstName": "Omar",
+    "lastName": "Sharaan",
+    "phoneNumber": "0781234567",
+    "email": "omar.sharaan@homegroup.org.uk",
+    "comments": "I want to book a route"
+}
