@@ -1,8 +1,8 @@
-GET http://localhost:27017/bookedRoutes
+GET http://localhost:27017/bookingRoutes
 
 ###
 
-POST http://localhost:27017/bookedRoutes
+POST http://localhost:27017/bookingRoutes
 Content-Type: application/json
 
 {

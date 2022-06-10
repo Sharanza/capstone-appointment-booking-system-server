@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 // schema for the available model and the fields that it will have (data types etc)
-const bookedSchema = new mongoose.Schema({
+const bookingSchema = new mongoose.Schema({
   day: {
     type: String,
   },
@@ -27,4 +27,4 @@ const bookedSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Booked", bookedSchema);
+module.exports = mongoose.model("Booking", bookingSchema);

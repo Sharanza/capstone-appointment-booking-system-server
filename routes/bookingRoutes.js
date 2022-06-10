@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const Booked = require("../models/booked");
+const Booking = require("../models/booking");
 
 // gets all bookings
-router.get("/", async (req, res) => {
+router.get("/all", async (req, res) => {
   try {
-    const bookings = await Booked.find();
+    const bookings = await Booking.find();
     res.json(bookings);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -13,10 +13,11 @@ router.get("/", async (req, res) => {
 });
 
 // creating a booking
-router.post("/booked", async (req, res) => {
+router.post("/booking", async (req, res) => {
+  console.log(req);
   // A request body is data sent by the client to my API.
   // A response body is the data my API sends to the client.
-  const booked = new Booked({
+  const booking = new Booking({
     day: req.body.day,
     month: req.body.month,
     time: req.body.time,
@@ -28,7 +29,7 @@ router.post("/booked", async (req, res) => {
   });
 
   try {
-    const newBooking = await booked.save();
+    const newBooking = await booking.save();
     // status 201 means sucessfully created an object usually used in post requests
     res.status(201).json(newBooking);
   } catch (err) {
@@ -42,7 +43,7 @@ router.delete("/:id", async (req, res) => {
   // delete requested object
 
   try {
-    await res.Booked.remove();
+    await res.Booking.remove();
     res.json({ message: "removed booking" });
   } catch (err) {
     res.status(500).json({ message: err.message });

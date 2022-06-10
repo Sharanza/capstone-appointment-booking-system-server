@@ -1,3 +1,5 @@
+const cors = require("cors");
+
 // requires the configurations made to .env to run the server
 require("dotenv").config();
 
@@ -20,10 +22,12 @@ db.once("open", () => console.log("Connected to MongoDB"));
 // app.use allows me to use any middleware when the server gets a request but before it gets to the routes
 app.use(express.json());
 
+app.use(cors());
+
 // Routes
-const bookedRoutes = require("./routes/bookedRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
 // tells express to use the availableRoutes
-app.use("/bookedRoutes", bookedRoutes);
+app.use("/bookingRoutes", bookingRoutes);
 
 // listens to port 27017 and logs to console
-app.listen(27017, () => console.log("Server started on port 27017"));
+app.listen(8081, () => console.log("Server started on port 8081"));
