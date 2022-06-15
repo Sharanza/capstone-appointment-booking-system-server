@@ -1,13 +1,7 @@
 const mongoose = require("mongoose");
 // schema for the available model and the fields that it will have (data types etc)
 const bookingSchema = new mongoose.Schema({
-  day: {
-    type: String,
-  },
-  month: {
-    type: String,
-  },
-  time: {
+  date: {
     type: String,
   },
   firstName: {
