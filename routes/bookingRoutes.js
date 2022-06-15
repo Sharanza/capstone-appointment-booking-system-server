@@ -14,12 +14,10 @@ router.get("/all", async (req, res) => {
 
 // creating a booking
 router.post("/booking", async (req, res) => {
-  console.log(req);
   // A request body is data sent by the client to my API.
   // A response body is the data my API sends to the client.
   const booking = new Booking({
-    day: req.body.day,
-    month: req.body.month,
+    date: req.body.date,
     time: req.body.time,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
