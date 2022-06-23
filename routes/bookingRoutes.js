@@ -2,10 +2,12 @@ const express = require("express");
 const router = express.Router();
 const Booking = require("../models/booking");
 
-// gets all bookings
-router.get("/all", async (req, res) => {
+// gets all available bookings
+router.get("/available", async (req, res) => {
   try {
-    const bookings = await Booking.find();
+    console.log("hello");
+    const bookings = await Booking.find({ available: true });
+    console.log(bookings);
     res.json(bookings);
   } catch (err) {
     res.status(500).json({ message: err.message });
