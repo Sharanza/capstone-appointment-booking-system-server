@@ -5,7 +5,6 @@ const Booking = require("../models/booking");
 // gets all available bookings
 router.get("/available", async (req, res) => {
   try {
-    console.log("hello");
     const bookings = await Booking.find({ available: true });
     console.log(bookings);
     res.json(bookings);
@@ -35,18 +34,6 @@ router.post("/booking", async (req, res) => {
   } catch (err) {
     // status 400 means bad request - sent to client in a json format in an object error message
     res.status(400).json({ message: err.message });
-  }
-});
-
-// deleting a booking
-router.delete("/:id", async (req, res) => {
-  // delete requested object
-
-  try {
-    await res.Booking.remove();
-    res.json({ message: "removed booking" });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
   }
 });
 
